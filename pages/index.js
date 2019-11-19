@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 
-export default function() {
+function Home() {
   return (
     <>
       <Head>
@@ -14,3 +14,5 @@ export default function() {
     </>
   );
 }
+
+export default Home;

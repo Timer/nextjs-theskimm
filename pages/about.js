@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 
-export default function() {
+function About() {
   return (
     <>
       <Head>
@@ -25,3 +25,15 @@ export default function() {
     </>
   );
 }
+
+About.getInitialProps = async () => {
+  await new Promise(resolve => {
+    console.log(
+      `Hello on the ${typeof window === "undefined" ? "Server" : "Client"}.`
+    );
+    setTimeout(resolve, 3000);
+  });
+  return {};
+};
+
+export default About;
