@@ -1,8 +1,12 @@
 import Link from "next/link";
+import Head from "next/head";
 
 export default function() {
   return (
     <>
+      <Head>
+        <title>Demo - About</title>
+      </Head>
       <main>
         <h1>About</h1>
         <p>This is a cool about page.</p>
