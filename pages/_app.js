@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Router from "next/router";
 import NProgress from "nprogress";
+import { useAmp } from "next/amp";
 
 Router.events.on("routeChangeStart", url => {
   console.log(`Start: ${url}`);
@@ -16,11 +17,14 @@ Router.events.on("routeChangeError", (err, url) => {
 });
 
 function MyApp({ Component, pageProps }) {
+  const isAmp = useAmp();
   return (
     <>
       <Head>
         <title>Demo</title>
-        <link rel="stylesheet" href="/nprogress.css" type="text/css"></link>
+        {!isAmp && (
+          <link rel="stylesheet" href="/nprogress.css" type="text/css"></link>
+        )}
       </Head>
 
       <Component {...pageProps} />
