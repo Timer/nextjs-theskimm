@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useDebounce } from "../utils/use-debounce";
+import { useDebounce } from "utils/use-debounce";
 import useSWR from "swr";
-import { fetcher } from "../utils/swr";
+import { fetcher } from "utils/swr";
 import Link from "next/link";
 
 export default function Search() {
