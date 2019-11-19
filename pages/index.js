@@ -11,6 +11,10 @@ function Home() {
       <Link href="/about">
         <a>About</a>
       </Link>
+      <br />
+      <Link href="/search">
+        <a>Search</a>
+      </Link>
     </>
   );
 }
