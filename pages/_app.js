@@ -1,10 +1,26 @@
 import Head from "next/head";
+import Router from "next/router";
+import NProgress from "nprogress";
+
+Router.events.on("routeChangeStart", url => {
+  console.log(`Start: ${url}`);
+  NProgress.start();
+});
+Router.events.on("routeChangeComplete", url => {
+  console.log(`Complete: ${url}`);
+  NProgress.done();
+});
+Router.events.on("routeChangeError", (err, url) => {
+  console.log(`Error: ${url} | Cancelled: ${err.cancelled}`);
+  NProgress.done();
+});
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
         <title>Demo</title>
+        <link rel="stylesheet" href="/nprogress.css" type="text/css"></link>
       </Head>
 
       <Component {...pageProps} />
